@@ -4,7 +4,7 @@ dir = "/home/pi/openssl/lsquic"
 
 algorithm = ["dilithium2","dilithium3","dilithium5","dilithium2_aes","dilithium3_aes","dilithium5_aes"] 
 
-for i in algorithm:
+for i in range(len(algorithm)):
     myCmd = '/home/pi/openssl/apps/openssl req -x509 -new -newkey'+ algorithm[i] +'-keyout /home/pi/openssl/lsquic/'+algorithm[i]+'/key_CA.key -out /home/pi/openssl/'+algorithm[i]+'/key_CA.pem -nodes -subj "/CN=oqstest CA" -days 365 -config /home/pi/openssl/apps/openssl.cnf'
     os.system(myCmd)
     myCmd = '/home/pi/openssl/apps/openssl genpkey -algorithm'+ algorithm[i] +'-out /home/pi/openssl/lsquic/'+algorithm[i]+'/key_srv.pem'
