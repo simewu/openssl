@@ -5,7 +5,7 @@ import psutil
 import time
 
 
-openssl_dir = '/home/pi/openssl'
+openssl_dir = '/home/pki/openssl'
 
 def header():
 	line = 'Timestamp,'
@@ -48,7 +48,7 @@ def run(file):
 	except KeyboardInterrupt:
 		pass
 
-fileName = 'LOGGED_CPU_OPENSSL.csv'
+fileName = 'NEW_LOGGED_CPU_OPENSSL.csv'
 file = open(fileName, 'w+')
 file.write(header() + '\n')
 run(file)
