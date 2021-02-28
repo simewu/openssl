@@ -4,8 +4,7 @@ import os
 import psutil
 import time
 
-
-openssl_dir = '/home/pki/openssl'
+openssl_dir = os.path.expanduser('~/openssl')
 
 def header():
 	line = 'Timestamp,'
