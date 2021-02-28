@@ -3,7 +3,8 @@ import time
 import datetime
 
 num_samples = int(input("Enter number of times to loop: \n"))
-openssl_dir = '/home/pi/openssl'
+
+openssl_dir = os.path.expanduser('~/openssl')
 
 def initCert(algorithm, bits = ''):
 	if algorithm == 'rsa':
