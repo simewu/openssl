@@ -1,3 +1,5 @@
+# A separate file is saved for every individual algorithm, but samples themselves are overwritten
+
 import os 
 import time
 import datetime
