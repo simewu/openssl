@@ -48,7 +48,7 @@ def certVerify(algorithm, num_samples, bits = ''):
 
 
 
-algorithms = ['rsa 2048', 'rsa 3072', 'rsa 4096', 'dilithium2', 'dilithium3', 'dilithium5', 'dilithium2_aes', 'dilithium3_aes', 'dilithium5_aes' 'falcon512', 'falcon1024', 'rsa3072_dilithium2', 'rsa3072_dilithium3','rsa4096_dilithium5', 'rsa3072_falcon512','rsa4096_falcon512', 'p256_dilithium2', 'p256_dilithium3', 'p384_dilithium5', 'p256_falcon512','p384_falcon1024'] #, 'p512_falcon512']
+algorithms = ['rsa', 'dilithium2', 'dilithium3', 'dilithium5', 'dilithium2_aes', 'dilithium3_aes', 'dilithium5_aes' 'falcon512', 'falcon1024', 'rsa3072_dilithium2', 'rsa3072_dilithium3','rsa4096_dilithium5', 'rsa3072_falcon512','rsa4096_falcon512', 'p256_dilithium2', 'p256_dilithium3', 'p384_dilithium5', 'p256_falcon512','p384_falcon1024'] #, 'p512_falcon512']
 
 def header():
 	line = 'Timestamp,'
