@@ -55,10 +55,10 @@ def header():
 	line = 'Timestamp,'
 	line += 'Timestamp (Seconds),'
 	line += 'Algorithm,'
-	line += 'Avg Key Gen Time (s),'
-	line += 'Avg Cert Signing Request Time (s),'
-	line += 'Avg Cert Gen Time (s),'
-	line += 'Avg Cert Verifying Time (s),'
+	line += 'Avg Key Gen Time (ms),'
+	line += 'Avg Cert Signing Request Time (ms),'
+	line += 'Avg Cert Gen Time (ms),'
+	line += 'Avg Cert Verifying Time (ms),'
 	return line
 
 def run(file):
@@ -75,28 +75,28 @@ def run(file):
 				t1 = time.time()
 				genKey(algorithm, num_samples, bits)
 				t2 = time.time()
-				avg_key_gen_time = (t2 - t1) / num_samples
+				avg_key_gen_time = (t2 - t1) / num_samples * 1000
 				print('Key generation time: ')
 				print(avg_key_gen_time)
 
 				t1 = time.time()
 				genCSR(algorithm, num_samples, bits)
 				t2 = time.time()
-				avg_cert_signing_request_time = (t2 - t1) / num_samples
+				avg_cert_signing_request_time = (t2 - t1) / num_samples * 1000
 				print('CSR generation time')
 				print(avg_cert_signing_request_time)
 
 				t1 = time.time()
 				genCert(algorithm, num_samples, bits)
 				t2 = time.time()
-				avg_cert_gen_time = (t2 - t1) / num_samples
+				avg_cert_gen_time = (t2 - t1) / num_samples * 1000
 				print('Certificate generation time')
 				print(avg_cert_gen_time)
 
 				t1 = time.time()
 				certVerify(algorithm, num_samples, bits)
 				t2 = time.time()
-				avg_cert_verify_time = (t2 - t1) / num_samples
+				avg_cert_verify_time = (t2 - t1) / num_samples * 1000
 				print('Certificate verifying time')
 				print(avg_cert_verify_time)
 
@@ -113,28 +113,28 @@ def run(file):
 			t1 = time.time()
 			genKey(algorithm, num_samples)
 			t2 = time.time()
-			avg_key_gen_time = (t2 - t1) / num_samples
+			avg_key_gen_time = (t2 - t1) / num_samples * 1000
 			print('Key generation time: ')
 			print(avg_key_gen_time)
 
 			t1 = time.time()
 			genCSR(algorithm, num_samples)
 			t2 = time.time()
-			avg_cert_signing_request_time = (t2 - t1) / num_samples
+			avg_cert_signing_request_time = (t2 - t1) / num_samples * 1000
 			print('CSR generation time: ')
 			print(avg_cert_signing_request_time)
 
 			t1 = time.time()
 			genCert(algorithm, num_samples)
 			t2 = time.time()
-			avg_cert_gen_time = (t2 - t1) / num_samples
+			avg_cert_gen_time = (t2 - t1) / num_samples * 1000
 			print('Certificate generation time')
 			print(avg_cert_gen_time)
 
 			t1 = time.time()
 			certVerify(algorithm, num_samples)
 			t2 = time.time()
-			avg_cert_verify_time = (t2 - t1) / num_samples
+			avg_cert_verify_time = (t2 - t1) / num_samples * 1000
 			print('Certificate verifying time')
 			print(avg_cert_verify_time)
 			
