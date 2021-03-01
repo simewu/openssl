@@ -49,7 +49,10 @@ def certVerify(algorithm, num_samples, bits = ''):
 
 
 
-algorithms = ['rsa', 'dilithium2', 'dilithium3', 'dilithium5', 'dilithium2_aes', 'dilithium3_aes', 'dilithium5_aes', 'falcon512', 'falcon1024', 'rsa3072_dilithium2', 'rsa3072_dilithium3','rsa4096_dilithium5', 'rsa3072_falcon512','rsa4096_falcon512', 'p256_dilithium2', 'p256_dilithium3', 'p384_dilithium5', 'p256_falcon512','p384_falcon1024'] #, 'p512_falcon512']
+algorithms = [
+	'rsa','dilithium2', 'dilithium3', 'dilithium5', 'falcon512', 'falcon1024', 'dilithium2_aes', 'dilithium3_aes', 'dilithium5_aes', 'rsa3072_dilithium2','rsa3072_falcon512', 'p256_dilithium2', 'p256_falcon512','p384_dilithium3', 'p521_dilithium5', 'p521_falcon1024'] 
+algorithms_in_english = [
+	'RSA', 'Dilithium 2', 'Dilithium 3', 'Dilithium 5', 'Falcon 512', 'Falcon 1024', 'Dilithium 2 + AES', 'Dilithium 3 + AES', 'Dilithium 5 + AES', 'RSA 3072 + Dilithium 2','RSA 3072 + Falcon 512', 'P256 + Dilithium 2', 'P256 + Falcon 512','P384 + Dilithium 3', 'P521 + Dilithium 5', 'P521 + Falcon 1024'] 
 
 def header():
 	line = 'Timestamp,'
@@ -65,6 +68,7 @@ def run(file):
 	rsa_bits_array = [2048, 3072, 4096];
 	
 	for algorithm in algorithms:
+		algorithm_in_english = algorithms_in_english[i]
 
 		if algorithm == 'rsa':
 			for bits in rsa_bits_array:
@@ -101,7 +105,7 @@ def run(file):
 
 				now = datetime.datetime.now()
 				time_end = (now - datetime.datetime(1970, 1, 1)).total_seconds()
-				line = f'{now},{time_end},{algorithm} {bits},{avg_key_gen_time},{avg_cert_signing_request_time},{avg_cert_gen_time},{avg_cert_verify_time},'
+				line = f'{now},{time_end},{algorithm} {bits},{algorithm_in_english} {bits},{avg_key_gen_time},{avg_cert_signing_request_time},{avg_cert_gen_time},{avg_cert_verify_time},'
 				file.write(line + '\n')
 
 
@@ -139,7 +143,7 @@ def run(file):
 			
 			now = datetime.datetime.now()
 			time_end = (now - datetime.datetime(1970, 1, 1)).total_seconds()
-			line = f'{now},{time_end},{algorithm},{avg_key_gen_time},{avg_cert_signing_request_time},{avg_cert_gen_time},{avg_cert_verify_time},'
+			line = f'{now},{time_end},{algorithm},{algorithm_in_english},{avg_key_gen_time},{avg_cert_signing_request_time},{avg_cert_gen_time},{avg_cert_verify_time},'
 			file.write(line + '\n')
 
 
