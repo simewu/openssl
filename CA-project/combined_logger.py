@@ -47,7 +47,6 @@ def certVerify(algorithm, num_samples, bits = ''):
 		os.system(myCmd)
 
 
-
 algorithms = [
 	'rsa','dilithium2', 'dilithium3', 'dilithium5', 'falcon512', 'falcon1024', 'dilithium2_aes', 'dilithium3_aes', 'dilithium5_aes', 'rsa3072_dilithium2','rsa3072_falcon512', 'p256_dilithium2', 'p256_falcon512','p384_dilithium3', 'p521_dilithium5', 'p521_falcon1024'] 
 algorithms_in_english = [
