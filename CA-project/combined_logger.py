@@ -48,9 +48,9 @@ def certVerify(algorithm, num_samples, bits = ''):
 
 
 algorithms = [
-	'rsa','dilithium2', 'dilithium3', 'dilithium5', 'falcon512', 'falcon1024', 'rainbowIclassic','rainbowIcircumzenithal','rainbowIcompressed','rainbowIIIclassic','rainbowIIIcircumzenithal','rainbowIIIcompressed','dilithium2_aes', 'dilithium3_aes', 'dilithium5_aes', 'rsa3072_dilithium2','rsa3072_falcon512', 'p256_dilithium2', 'p256_falcon512','p384_dilithium3', 'p521_dilithium5', 'p521_falcon1024'] 
+	'rsa','dilithium2', 'dilithium3', 'dilithium5', 'falcon512', 'falcon1024', 'rainbowIclassic','rainbowIcircumzenithal','rainbowIcompressed','rainbowIIIclassic','rainbowIIIcircumzenithal','rainbowIIIcompressed','dilithium2_aes', 'dilithium3_aes', 'dilithium5_aes', 'rsa3072_dilithium2','rsa3072_falcon512', 'p256_dilithium2', 'p256_falcon512','p384_dilithium3', 'p521_dilithium5', 'p521_falcon1024','rsa3072_rainbowIclassic','p256_rainbowIclassic','p384_rainbowIIIclassic'] 
 algorithms_in_english = [
-	'RSA', 'Dilithium 2', 'Dilithium 3', 'Dilithium 5', 'Falcon 512', 'Falcon 1024', 'Rainbow I Classic','Rainbow I Circumzenithal','Rainbow I Compressed','Rainbow III Classic','Rainbow III Circumzenithal','Rainbow III Compressed', 'Dilithium 2 + AES', 'Dilithium 3 + AES', 'Dilithium 5 + AES', 'RSA 3072 + Dilithium 2','RSA 3072 + Falcon 512', 'P256 + Dilithium 2', 'P256 + Falcon 512','P384 + Dilithium 3', 'P521 + Dilithium 5', 'P521 + Falcon 1024'] 
+	'RSA', 'Dilithium 2', 'Dilithium 3', 'Dilithium 5', 'Falcon 512', 'Falcon 1024', 'Rainbow I Classic','Rainbow I Circumzenithal','Rainbow I Compressed','Rainbow III Classic','Rainbow III Circumzenithal','Rainbow III Compressed', 'Dilithium 2 + AES', 'Dilithium 3 + AES', 'Dilithium 5 + AES', 'RSA 3072 + Dilithium 2','RSA 3072 + Falcon 512', 'P256 + Dilithium 2', 'P256 + Falcon 512','P384 + Dilithium 3', 'P521 + Dilithium 5', 'P521 + Falcon 1024','RSA 3072 + Rainbow I Classic','P256 + Rainbow I Classic','P384 + rainbowIIIclassic'] 
 
 def header():
 	line = 'Timestamp,'

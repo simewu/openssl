@@ -3,10 +3,10 @@ import os
 openssl_dir = os.path.expanduser('~/openssl')
 
 
-myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey rainbowIIIcompressed -keyout key_CA.key -out key_CA.pem -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf'
+myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey p384_rainbowIIIclassic -keyout key_CA.key -out key_CA.pem -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf'
 os.system(myCmd)
 
-myCmd = f'{openssl_dir}/apps/openssl genpkey -algorithm rainbowIIIcompressed -out key_srv.key'
+myCmd = f'{openssl_dir}/apps/openssl genpkey -algorithm p384_rainbowIIIclassic -out key_srv.key'
 os.system(myCmd)
 
 myCmd = f'{openssl_dir}/apps/openssl req -new -key key_srv.key -out key_srv.csr -nodes -subj \'/CN=oqstest server\' -config {openssl_dir}/apps/openssl.cnf'
