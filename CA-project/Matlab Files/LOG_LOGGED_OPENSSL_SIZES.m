@@ -5,7 +5,7 @@ font_size = 12;
 
 disp('Begin');
 
-data = readmatrix('LOGGED_OPENSSL.csv');
+data = readmatrix('old_LOGGED_OPENSSL.csv');
 xticklabels({'RSA 2048', 'RSA 3072', 'RSA 4096', 'Dilithium 2', 'Dilithium 3', 'Dilithium 4', 'Falcon 512', 'Falcon 1024', 'RSA 3072 - Dilithium 2', 'RSA 3072 - Dilithium 3', 'RSA 3072 - Falcon 512', 'P256 - Dilithium 2', 'P256 - Dilithium 3', 'P384 - Dilithium 4', 'P256 - Falcon 512'});
 
 disp('Data read');
