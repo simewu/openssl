@@ -100,7 +100,7 @@ def header():
 
 def run(file):
 	rsa_bits_array = [2048, 3072, 4096];
-	ecdsa_bits_array = ['256k1','384ri','521r1'];
+	ecdsa_bits_array = ['256k1','384r1','521r1'];
 	
 	for i, algorithm in enumerate(algorithms):
 		algorithm_in_english = algorithms_in_english[i]
