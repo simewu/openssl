@@ -52,7 +52,7 @@ def genCSR(algorithm, num_samples, bits = ''):
 def genCert(algorithm, num_samples, bits =''):
 
 	if algorithm == 'secp':
-		myCmd=f'{openssl_dir}/apps/openssl x509 -req -in key_srv_{algorithm}{bits}.csr -out key_crt_{algorithm}{bits}.pem -CA key_CA{algorithm}{bits}.pem -CAkey key_CA.key -CAcreateserial -days 365'
+		myCmd=f'{openssl_dir}/apps/openssl x509 -req -in key_srv_{algorithm}{bits}.csr -out key_crt_{algorithm}{bits}.pem -CA key_CA_{algorithm}{bits}.pem -CAkey key_CA{algorithm}{bits}.key -CAcreateserial -days 365'
 		for i in range (num_samples):
 			os.system(myCmd)
 	else:
