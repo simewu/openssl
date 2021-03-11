@@ -13,7 +13,7 @@ def initCert(algorithm, bits = ''):
 		myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey rsa -keyout key_CA_{algorithm}{bits}.key -out key_CA_{algorithm}{bits}.pem -pkeyopt rsa_keygen_bits:{bits} -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
 		os.system(myCmd)
 	if algorithm == 'secp':
-		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_CA_{algorithm}{bits}.key -name {algorithm} -genkey '
+		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_CA_{algorithm}{bits}.key -name {algorithm}{bits} -genkey '
 		os.system(myCmd)
 		myCmd =f'{openssl_dir}/apps/openssl req -new -key key_CA_{algorithm}{bits}.key -x509 -nodes -days 365 -out key_CA_{algorithm}{bits}.pem -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf'
 		os.system(myCmd)
