@@ -81,10 +81,10 @@ def certVerify(algorithm, num_samples, bits = ''):
 #]
 
 algorithms = [
-	'rsa','secp'
+	'secp'
 ]
 algorithms_in_english = [
-	'RSA','ECDSA'
+	'ECDSA'
 ]
 
 def header():
@@ -223,7 +223,7 @@ def run(file):
 
 
 
-fileName = 'NEW_LOGGED_OPENSSL_RSAECDSA.csv'
+fileName = 'NEW_LOGGED_OPENSSL_ECDSA.csv'
 file = open(fileName, 'w')
 file.write(header() + '\n')
 run(file)
