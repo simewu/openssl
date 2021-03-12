@@ -104,39 +104,45 @@ def run(file):
 	
 	for i, algorithm in enumerate(algorithms):
 		algorithm_in_english = algorithms_in_english[i]
+		print(f'Starting {algorithm} {bits}...')
+		time.sleep(0.1)
 
 		if algorithm == 'rsa':
 			for bits in rsa_bits_array:
-				print(f'Starting {algorithm} {bits}...')
+				#print(f'Starting {algorithm} {bits}...')
 				initCert(algorithm, bits)
 
 				t1 = time.time()
 				genKey(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_key_gen_time = (t2 - t1) / num_samples * 1000
-				print('Key generation time: ')
-				print(avg_key_gen_time)
+				#print('Key generation time: ')
+				#print(avg_key_gen_time)
+				time.sleep(0.1)
 
 				t1 = time.time()
 				genCSR(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_cert_signing_request_time = (t2 - t1) / num_samples * 1000
-				print('CSR generation time')
-				print(avg_cert_signing_request_time)
+				#print('CSR generation time')
+				#print(avg_cert_signing_request_time)
+				time.sleep(0.1)
 
 				t1 = time.time()
 				genCert(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_cert_gen_time = (t2 - t1) / num_samples * 1000
-				print('Certificate generation time')
-				print(avg_cert_gen_time)
+				#print('Certificate generation time')
+				#print(avg_cert_gen_time)
+				time.sleep(0.1)
 
 				t1 = time.time()
 				certVerify(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_cert_verify_time = (t2 - t1) / num_samples * 1000
-				print('Certificate verifying time')
-				print(avg_cert_verify_time)
+				#print('Certificate verifying time')
+				#print(avg_cert_verify_time)
+				time.sleep(0.1)
 
 				now = datetime.datetime.now()
 				time_end = (now - datetime.datetime(1970, 1, 1)).total_seconds()
@@ -145,36 +151,40 @@ def run(file):
 
 		if algorithm == 'secp':
 			for bits in ecdsa_bits_array:
-				print(f'Starting {algorithm} {bits}...')
+				#print(f'Starting {algorithm} {bits}...')
 				initCert(algorithm, bits)
 
 				t1 = time.time()
 				genKey(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_key_gen_time = (t2 - t1) / num_samples * 1000
-				print('Key generation time: ')
-				print(avg_key_gen_time)
+				#print('Key generation time: ')
+				#print(avg_key_gen_time)
+				time.sleep(0.1)
 
 				t1 = time.time()
 				genCSR(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_cert_signing_request_time = (t2 - t1) / num_samples * 1000
-				print('CSR generation time')
-				print(avg_cert_signing_request_time)
+				#print('CSR generation time')
+				#print(avg_cert_signing_request_time)
+				time.sleep(0.1)
 
 				t1 = time.time()
 				genCert(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_cert_gen_time = (t2 - t1) / num_samples * 1000
-				print('Certificate generation time')
-				print(avg_cert_gen_time)
+				#print('Certificate generation time')
+				#print(avg_cert_gen_time)
+				time.sleep(0.1)
 
 				t1 = time.time()
 				certVerify(algorithm, num_samples, bits)
 				t2 = time.time()
 				avg_cert_verify_time = (t2 - t1) / num_samples * 1000
-				print('Certificate verifying time')
-				print(avg_cert_verify_time)
+				#print('Certificate verifying time')
+				#print(avg_cert_verify_time)
+				time.sleep(0.1)
 
 				now = datetime.datetime.now()
 				time_end = (now - datetime.datetime(1970, 1, 1)).total_seconds()
@@ -184,36 +194,40 @@ def run(file):
 
 
 		else:
-			print(f'Starting {algorithm}...')
+			#print(f'Starting {algorithm}...')
 			initCert(algorithm)
 
 			t1 = time.time()
 			genKey(algorithm, num_samples)
 			t2 = time.time()
 			avg_key_gen_time = (t2 - t1) / num_samples * 1000
-			print('Key generation time: ')
-			print(avg_key_gen_time)
+			#print('Key generation time: ')
+			#print(avg_key_gen_time)
+			time.sleep(0.1)
 
 			t1 = time.time()
 			genCSR(algorithm, num_samples)
 			t2 = time.time()
 			avg_cert_signing_request_time = (t2 - t1) / num_samples * 1000
-			print('CSR generation time: ')
-			print(avg_cert_signing_request_time)
+			#print('CSR generation time: ')
+			#print(avg_cert_signing_request_time)
+			time.sleep(0.1)
 
 			t1 = time.time()
 			genCert(algorithm, num_samples)
 			t2 = time.time()
 			avg_cert_gen_time = (t2 - t1) / num_samples * 1000
-			print('Certificate generation time')
-			print(avg_cert_gen_time)
+			#print('Certificate generation time')
+			#print(avg_cert_gen_time)
+			time.sleep(0.1)
 
 			t1 = time.time()
 			certVerify(algorithm, num_samples)
 			t2 = time.time()
 			avg_cert_verify_time = (t2 - t1) / num_samples * 1000
-			print('Certificate verifying time')
-			print(avg_cert_verify_time)
+			#print('Certificate verifying time')
+			#print(avg_cert_verify_time)
+			time.sleep(0.1)
 			
 			now = datetime.datetime.now()
 			time_end = (now - datetime.datetime(1970, 1, 1)).total_seconds()
