@@ -47,7 +47,7 @@ def run(file):
 	except KeyboardInterrupt:
 		pass
 
-fileName = 'NEW_LOGGED_CPU_OPENSSL_RSAECDSA.csv'
+fileName = 'NEW_LOGGED_CPU_OPENSSL_FINAL.csv'
 file = open(fileName, 'w+')
 file.write(header() + '\n')
 run(file)
