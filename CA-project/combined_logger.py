@@ -104,7 +104,7 @@ def run(file):
 	
 	for i, algorithm in enumerate(algorithms):
 		algorithm_in_english = algorithms_in_english[i]
-		print(f'Starting {algorithm} {bits}...')
+		print(f'Starting {algorithm}...')
 		time.sleep(0.1)
 
 		if algorithm == 'rsa':
