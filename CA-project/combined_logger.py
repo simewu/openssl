@@ -13,7 +13,7 @@ def initCert(algorithm, bits = ''):
 		myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey rsa:{bits} -keyout key_CA_{algorithm}{bits}.key -out key_CA_{algorithm}{bits}.pem -pkeyopt rsa_keygen_bits:{bits} -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
 		os.system(myCmd)
 	if algorithm == 'secp':
-		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_CA_{algorithm}{bits}.key -name {algorithm}{bits} -genkey '
+		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_CA_{algorithm}{bits}.key -name {algorithm}{bits} -genkey > /dev/null 2>&1'
 		os.system(myCmd)
 		myCmd =f'{openssl_dir}/apps/openssl req -new -key key_CA_{algorithm}{bits}.key -x509 -nodes -days 365 -out key_CA_{algorithm}{bits}.pem -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
 		os.system(myCmd)
@@ -27,7 +27,7 @@ def genKey(algorithm, num_samples, bits = ''):
 		for i in range (num_samples):
 			os.system(myCmd)
 	if algorithm == 'secp':
-		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_srv_{algorithm}{bits}.key -name secp{bits} -genkey'
+		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_srv_{algorithm}{bits}.key -name secp{bits} -genkey > /dev/null 2>&1'
 		for i in range(num_samples):
 			os.system(myCmd)
 	else:
