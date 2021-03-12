@@ -23,7 +23,7 @@ def initCert(algorithm, bits = ''):
 
 def genKey(algorithm, num_samples, bits = ''):
 	if algorithm == 'rsa':
-		myCmd = f'{openssl_dir}/apps/openssl genpkey -algorithm rsa:{bits} -out {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.key -pkeyopt rsa_keygen_bits:{bits} > /dev/null 2>&1'
+		myCmd = f'{openssl_dir}/apps/openssl genpkey -algorithm rsa -out {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.key -pkeyopt rsa_keygen_bits:{bits} > /dev/null 2>&1'
 		for i in range (num_samples):
 			os.system(myCmd)
 	if algorithm == 'secp':
@@ -81,10 +81,10 @@ def certVerify(algorithm, num_samples, bits = ''):
 #]
 
 algorithms = [
-	'secp'
+	'rsa','rsa3072_rainbowIcompressed','rsa3072_dilithium2'
 ]
 algorithms_in_english = [
-	'ECDSA'
+	'RSA','RSA 3072 + Rainbow I Compressed','RSA 3072 + Dilithium2'
 ]
 
 def header():
