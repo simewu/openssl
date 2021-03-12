@@ -15,7 +15,7 @@ def initCert(algorithm, bits = ''):
 	if algorithm == 'secp':
 		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_CA_{algorithm}{bits}.key -name {algorithm}{bits} -genkey '
 		os.system(myCmd)
-		myCmd =f'{openssl_dir}/apps/openssl req -new -key key_CA_{algorithm}{bits}.key -x509 -nodes -days 365 -out key_CA_{algorithm}{bits}.pem -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf'
+		myCmd =f'{openssl_dir}/apps/openssl req -new -key key_CA_{algorithm}{bits}.key -x509 -nodes -days 365 -out key_CA_{algorithm}{bits}.pem -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
 		os.system(myCmd)
 	else:
 		myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey {algorithm} -keyout key_CA_{algorithm}{bits}.key -out key_CA_{algorithm}{bits}.pem -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
@@ -41,7 +41,7 @@ def genCSR(algorithm, num_samples, bits = ''):
 		for i in range (num_samples):
 			os.system(myCmd)
 	if algorithm == 'secp':
-		myCmd =f'{openssl_dir}/apps/openssl req -newkey ec:key_CA_{algorithm}{bits}.key -keyout ec_PRIVATEKEY.key -out key_srv_{algorithm}{bits}.csr -nodes -subj \'/CN=oqstest server\' -config {openssl_dir}/apps/openssl.cnf'
+		myCmd =f'{openssl_dir}/apps/openssl req -newkey ec:key_CA_{algorithm}{bits}.key -keyout ec_PRIVATEKEY.key -out key_srv_{algorithm}{bits}.csr -nodes -subj \'/CN=oqstest server\' -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
 		for i in range (num_samples):
 			os.system(myCmd)
 	else:
@@ -52,11 +52,11 @@ def genCSR(algorithm, num_samples, bits = ''):
 def genCert(algorithm, num_samples, bits =''):
 
 	if algorithm == 'secp':
-		myCmd=f'{openssl_dir}/apps/openssl x509 -req -in key_srv_{algorithm}{bits}.csr -out key_crt_{algorithm}{bits}.pem -CA key_CA_{algorithm}{bits}.pem -CAkey key_CA_{algorithm}{bits}.key -CAcreateserial -days 365'
+		myCmd=f'{openssl_dir}/apps/openssl x509 -req -in key_srv_{algorithm}{bits}.csr -out key_crt_{algorithm}{bits}.pem -CA key_CA_{algorithm}{bits}.pem -CAkey key_CA_{algorithm}{bits}.key -CAcreateserial -days 365 > /dev/null 2>&1'
 		for i in range (num_samples):
 			os.system(myCmd)
 	else:
-		myCmd = f'{openssl_dir}/apps/openssl x509 -req -in {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.csr -out {openssl_dir}/CA-project/crt/key_crt_{algorithm}{bits}.pem -CA key_CA_{algorithm}{bits}.pem -CAkey key_CA_{algorithm}{bits}.key -CAcreateserial -days 365' 
+		myCmd = f'{openssl_dir}/apps/openssl x509 -req -in {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.csr -out {openssl_dir}/CA-project/crt/key_crt_{algorithm}{bits}.pem -CA key_CA_{algorithm}{bits}.pem -CAkey key_CA_{algorithm}{bits}.key -CAcreateserial -days 365 > /dev/null 2>&1' 
 		for i in range (num_samples):
 			os.system(myCmd)
 
@@ -64,11 +64,11 @@ def genCert(algorithm, num_samples, bits =''):
 
 def certVerify(algorithm, num_samples, bits = ''):
 	if algorithm == 'secp':
-		myCmd = f'{openssl_dir}/apps/openssl verify -CAfile key_CA_{algorithm}{bits}.pem key_crt_{algorithm}{bits}.pem key_crt_{algorithm}{bits}.pem'
+		myCmd = f'{openssl_dir}/apps/openssl verify -CAfile key_CA_{algorithm}{bits}.pem key_crt_{algorithm}{bits}.pem key_crt_{algorithm}{bits}.pem > /dev/null 2>&1'
 		for i in range (num_samples):
 			os.system(myCmd)
 	else:
-		myCmd = f'{openssl_dir}/apps/openssl verify -CAfile {openssl_dir}/CA-project/key_CA_{algorithm}{bits}.pem {openssl_dir}/CA-project/crt/key_crt_{algorithm}{bits}.pem {openssl_dir}/CA-project/crt/key_crt_{algorithm}{bits}.pem'
+		myCmd = f'{openssl_dir}/apps/openssl verify -CAfile {openssl_dir}/CA-project/key_CA_{algorithm}{bits}.pem {openssl_dir}/CA-project/crt/key_crt_{algorithm}{bits}.pem {openssl_dir}/CA-project/crt/key_crt_{algorithm}{bits}.pem > /dev/null 2>&1'
 		for i in range (num_samples):
 			os.system(myCmd)
 
