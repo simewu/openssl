@@ -161,7 +161,7 @@ def run(file):
 				line = f'{now},{time_end},{algorithm} {bits},{algorithm_in_english} {bits},{avg_key_gen_time},{avg_cert_signing_request_time},{avg_cert_gen_time},{avg_cert_verify_time},'
 				file.write(line + '\n')
 
-		if algorithm == 'secp':
+		elif algorithm == 'secp':
 			for bits in ecdsa_bits_array:
 				#print(f'Starting {algorithm} {bits}...')
 				initCert(algorithm, bits)
@@ -202,8 +202,6 @@ def run(file):
 				time_end = (now - datetime.datetime(1970, 1, 1)).total_seconds()
 				line = f'{now},{time_end},{algorithm} {bits},{algorithm_in_english}{bits},{avg_key_gen_time},{avg_cert_signing_request_time},{avg_cert_gen_time},{avg_cert_verify_time},'
 				file.write(line + '\n')
-
-
 
 		else:
 			#print(f'Starting {algorithm}...')
@@ -249,7 +247,7 @@ def run(file):
 
 
 
-fileName = 'NEW_LOGGED_OPENSSL_FINAL.csv'
+fileName = 'NEW_LOGGED_OPENSSL_FINAL1.csv'
 file = open(fileName, 'w')
 file.write(header() + '\n')
 run(file)
