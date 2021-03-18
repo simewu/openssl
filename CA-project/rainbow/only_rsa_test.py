@@ -11,7 +11,7 @@ openssl_dir = os.path.expanduser('~/openssl')
 def initCert(algorithm,bits ):
 	if algorithm == 'rsa':
 		#myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey rsa: -keyout key_CA_{algorithm}.key -out key_CA_{algorithm}.pem -pkeyopt rsa_keygen_bits: -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
-		myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey rsa:2048 -keyout key_CA_{algorithm}.key -out key_CA_{algorithm}.pem -pkeyopt rsa_keygen_bits:2048 -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
+		myCmd = f'{openssl_dir}/apps/openssl req -x509 -new -newkey rsa:2048 -keyout key_CA_{algorithm}.key -out key_CA_{algorithm}.pem -pkeyopt rsa_keygen_bits:{bits} -nodes -subj "/CN=oqstest CA" -days 365 -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
 		os.system(myCmd)
 	if algorithm == 'secp':
 		myCmd =f'{openssl_dir}/apps/openssl ecparam -out key_CA_{algorithm}.key -name {algorithm} -genkey > /dev/null 2>&1'
