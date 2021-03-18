@@ -232,7 +232,7 @@ def run(file):
 
 
 
-fileName = 'NEW_LOGGED_OPENSSL_FINAL1.csv'
+fileName = 'NEW_LOGGED_OPENSSL_RSA_MOD.csv'
 file = open(fileName, 'w')
 file.write(header() + '\n')
 run(file)

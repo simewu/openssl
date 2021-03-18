@@ -1793,8 +1793,24 @@ dstu4145le 2 9 : uacurve9 : DSTU curve 9
 1 3 9999 5 1 1 1 : rainbowIclassic : rainbowIclassic
 1 3 9999 5 1 2 1 : p256_rainbowIclassic : p256_rainbowIclassic
 1 3 9999 5 1 3 1 : rsa3072_rainbowIclassic : rsa3072_rainbowIclassic
+1 3 9999 5 1 4 1 : rainbowIcircumzenithal : rainbowIcircumzenithal
+1 3 9999 5 1 5 1 : p256_rainbowIcircumzenithal : p256_rainbowIcircumzenithal
+1 3 9999 5 1 6 1 : rsa3072_rainbowIcircumzenithal : rsa3072_rainbowIcircumzenithal
+1 3 9999 5 1 7 1 : rainbowIcompressed : rainbowIcompressed
+1 3 9999 5 1 8 1 : p256_rainbowIcompressed : p256_rainbowIcompressed
+1 3 9999 5 1 9 1 : rsa3072_rainbowIcompressed : rsa3072_rainbowIcompressed
+1 3 9999 5 2 1 1 : rainbowIIIclassic : rainbowIIIclassic
+1 3 9999 5 2 2 1 : p384_rainbowIIIclassic : p384_rainbowIIIclassic
+1 3 9999 5 2 3 1 : rainbowIIIcircumzenithal : rainbowIIIcircumzenithal
+1 3 9999 5 2 4 1 : p384_rainbowIIIcircumzenithal : p384_rainbowIIIcircumzenithal
+1 3 9999 5 2 5 1 : rainbowIIIcompressed : rainbowIIIcompressed
+1 3 9999 5 2 6 1 : p384_rainbowIIIcompressed : p384_rainbowIIIcompressed
 1 3 9999 5 3 1 1 : rainbowVclassic : rainbowVclassic
 1 3 9999 5 3 2 1 : p521_rainbowVclassic : p521_rainbowVclassic
+1 3 9999 5 3 3 1 : rainbowVcircumzenithal : rainbowVcircumzenithal
+1 3 9999 5 3 4 1 : p521_rainbowVcircumzenithal : p521_rainbowVcircumzenithal
+1 3 9999 5 3 5 1 : rainbowVcompressed : rainbowVcompressed
+1 3 9999 5 3 6 1 : p521_rainbowVcompressed : p521_rainbowVcompressed
 1 3 9999 6 1 1 : sphincsharaka128frobust : sphincsharaka128frobust
 1 3 9999 6 1 2 : p256_sphincsharaka128frobust : p256_sphincsharaka128frobust
 1 3 9999 6 1 3 : rsa3072_sphincsharaka128frobust : rsa3072_sphincsharaka128frobust

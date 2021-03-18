@@ -1,0 +1,2 @@
+Timestamp,Timestamp (Seconds),Algorithm,Algorithm (human readable),Avg Key Gen Time (ms),Avg Cert Signing Request Time (ms),Avg Cert Gen Time (ms),Avg Cert Verifying Time (ms),
+2021-03-18 17:45:31.179075,1616089531.179075,rsa ,RSA ,170.55612111091614,9.975112438201904,5.117855072021484,3.1819968223571777,
