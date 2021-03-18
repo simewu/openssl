@@ -41,11 +41,7 @@ def genCSR(algorithm, num_samples, bits = ''):
 	if algorithm == 'rsa':
 		#myCmd = f'{openssl_dir}/apps/openssl req -new -key {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.key -out {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.csr -nodes -pkeyopt rsa_keygen_bits:{bits} -subj \'/CN=oqstest server\' -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
 		myCmd = f'{openssl_dir}/apps/openssl req -new -key {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.key -out {openssl_dir}/CA-project/csr/key_srv_{algorithm}{bits}.csr -nodes -pkeyopt rsa_keygen_bits:{bits} -subj \'/CN=oqstest server\' -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
-<<<<<<< HEAD
 		for i in range (num_samples):	
-=======
-		for i in range (num_samples):
->>>>>>> 7055ef40cb2e354ab40c2a5eec987cbe4cdf4218
 			os.system(myCmd)
 	if algorithm == 'secp':
 		myCmd =f'{openssl_dir}/apps/openssl req -newkey ec:key_CA_{algorithm}{bits}.key -keyout ec_PRIVATEKEY.key -out key_srv_{algorithm}{bits}.csr -nodes -subj \'/CN=oqstest server\' -config {openssl_dir}/apps/openssl.cnf > /dev/null 2>&1'
