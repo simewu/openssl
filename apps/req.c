@@ -1594,6 +1594,7 @@ static EVP_PKEY_CTX *set_keygen_ctx(const char *gstr,
 
 static int genpkey_cb(EVP_PKEY_CTX *ctx)
 {
+    return 1; //cyber sec lab
     char c = '*';
     BIO *b = EVP_PKEY_CTX_get_app_data(ctx);
     int p;

@@ -12,7 +12,7 @@ OPENSSL_DIR=$PWD/openssl
 cd liboqs
 mkdir build && cd build
 cmake -GNinja -DOQS_USE_OPENSSL=ON ..
-cmake -GNinja -DBUILD_SHARED_LIBS=ON ..
+#cmake -GNinja -DBUILD_SHARED_LIBS=ON .. # LibOQS errors
 cmake -GNinja -DCMAKE_INSTALL_PREFIX=$OPENSSL_DIR/oqs ..
 ninja
 sudo ninja install 

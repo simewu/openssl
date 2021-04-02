@@ -106,8 +106,24 @@ int oqssl_sig_nids_list[] = {
         NID_rainbowIclassic,
         NID_p256_rainbowIclassic,
         NID_rsa3072_rainbowIclassic,
+        NID_rainbowIcircumzenithal,
+        NID_p256_rainbowIcircumzenithal,
+        NID_rsa3072_rainbowIcircumzenithal,
+        NID_rainbowIcompressed,
+        NID_p256_rainbowIcompressed,
+        NID_rsa3072_rainbowIcompressed,
+        NID_rainbowIIIclassic,
+        NID_p384_rainbowIIIclassic,
+        NID_rainbowIIIcircumzenithal,
+        NID_p384_rainbowIIIcircumzenithal,
+        NID_rainbowIIIcompressed,
+        NID_p384_rainbowIIIcompressed,
         NID_rainbowVclassic,
         NID_p521_rainbowVclassic,
+        NID_rainbowVcircumzenithal,
+        NID_p521_rainbowVcircumzenithal,
+        NID_rainbowVcompressed,
+        NID_p521_rainbowVcompressed,
         NID_sphincsharaka128frobust,
         NID_p256_sphincsharaka128frobust,
         NID_rsa3072_sphincsharaka128frobust,
@@ -235,9 +251,32 @@ char* get_oqs_alg_name(int openssl_nid)
     case NID_p256_rainbowIclassic:
     case NID_rsa3072_rainbowIclassic:
       return OQS_SIG_alg_rainbow_I_classic;
+    case NID_rainbowIcircumzenithal:
+    case NID_p256_rainbowIcircumzenithal:
+    case NID_rsa3072_rainbowIcircumzenithal:
+      return OQS_SIG_alg_rainbow_I_circumzenithal;
+    case NID_rainbowIcompressed:
+    case NID_p256_rainbowIcompressed:
+    case NID_rsa3072_rainbowIcompressed:
+      return OQS_SIG_alg_rainbow_I_compressed;
+    case NID_rainbowIIIclassic:
+    case NID_p384_rainbowIIIclassic:
+      return OQS_SIG_alg_rainbow_III_classic;
+    case NID_rainbowIIIcircumzenithal:
+    case NID_p384_rainbowIIIcircumzenithal:
+      return OQS_SIG_alg_rainbow_III_circumzenithal;
+    case NID_rainbowIIIcompressed:
+    case NID_p384_rainbowIIIcompressed:
+      return OQS_SIG_alg_rainbow_III_compressed;
     case NID_rainbowVclassic:
     case NID_p521_rainbowVclassic:
       return OQS_SIG_alg_rainbow_V_classic;
+    case NID_rainbowVcircumzenithal:
+    case NID_p521_rainbowVcircumzenithal:
+      return OQS_SIG_alg_rainbow_V_circumzenithal;
+    case NID_rainbowVcompressed:
+    case NID_p521_rainbowVcompressed:
+      return OQS_SIG_alg_rainbow_V_compressed;
     case NID_sphincsharaka128frobust:
     case NID_p256_sphincsharaka128frobust:
     case NID_rsa3072_sphincsharaka128frobust:
@@ -402,7 +441,16 @@ static int is_oqs_hybrid_alg(int openssl_nid)
     case NID_rsa3072_picnic3l1:
     case NID_p256_rainbowIclassic:
     case NID_rsa3072_rainbowIclassic:
+    case NID_p256_rainbowIcircumzenithal:
+    case NID_rsa3072_rainbowIcircumzenithal:
+    case NID_p256_rainbowIcompressed:
+    case NID_rsa3072_rainbowIcompressed:
+    case NID_p384_rainbowIIIclassic:
+    case NID_p384_rainbowIIIcircumzenithal:
+    case NID_p384_rainbowIIIcompressed:
     case NID_p521_rainbowVclassic:
+    case NID_p521_rainbowVcircumzenithal:
+    case NID_p521_rainbowVcompressed:
     case NID_p256_sphincsharaka128frobust:
     case NID_rsa3072_sphincsharaka128frobust:
     case NID_p256_sphincssha256128frobust:
@@ -429,6 +477,8 @@ static int get_classical_nid(int hybrid_id)
     case NID_rsa3072_picnicl1full:
     case NID_rsa3072_picnic3l1:
     case NID_rsa3072_rainbowIclassic:
+    case NID_rsa3072_rainbowIcircumzenithal:
+    case NID_rsa3072_rainbowIcompressed:
     case NID_rsa3072_sphincsharaka128frobust:
     case NID_rsa3072_sphincssha256128frobust:
     case NID_rsa3072_sphincsshake256128frobust:
@@ -440,17 +490,24 @@ static int get_classical_nid(int hybrid_id)
     case NID_p256_picnicl1full:
     case NID_p256_picnic3l1:
     case NID_p256_rainbowIclassic:
+    case NID_p256_rainbowIcircumzenithal:
+    case NID_p256_rainbowIcompressed:
     case NID_p256_sphincsharaka128frobust:
     case NID_p256_sphincssha256128frobust:
     case NID_p256_sphincsshake256128frobust:
       return NID_X9_62_prime256v1;
     case NID_p384_dilithium3:
     case NID_p384_dilithium3_aes:
+    case NID_p384_rainbowIIIclassic:
+    case NID_p384_rainbowIIIcircumzenithal:
+    case NID_p384_rainbowIIIcompressed:
       return NID_secp384r1;
     case NID_p521_dilithium5:
     case NID_p521_dilithium5_aes:
     case NID_p521_falcon1024:
     case NID_p521_rainbowVclassic:
+    case NID_p521_rainbowVcircumzenithal:
+    case NID_p521_rainbowVcompressed:
       return NID_secp521r1;///// OQS_TEMPLATE_FRAGMENT_ASSIGN_CLASSICAL_NIDS_END
     default:
       return 0;
@@ -493,8 +550,24 @@ static int get_oqs_nid(int hybrid_id)
     case NID_p256_rainbowIclassic:
     case NID_rsa3072_rainbowIclassic:
       return NID_rainbowIclassic;
+    case NID_p256_rainbowIcircumzenithal:
+    case NID_rsa3072_rainbowIcircumzenithal:
+      return NID_rainbowIcircumzenithal;
+    case NID_p256_rainbowIcompressed:
+    case NID_rsa3072_rainbowIcompressed:
+      return NID_rainbowIcompressed;
+    case NID_p384_rainbowIIIclassic:
+      return NID_rainbowIIIclassic;
+    case NID_p384_rainbowIIIcircumzenithal:
+      return NID_rainbowIIIcircumzenithal;
+    case NID_p384_rainbowIIIcompressed:
+      return NID_rainbowIIIcompressed;
     case NID_p521_rainbowVclassic:
       return NID_rainbowVclassic;
+    case NID_p521_rainbowVcircumzenithal:
+      return NID_rainbowVcircumzenithal;
+    case NID_p521_rainbowVcompressed:
+      return NID_rainbowVcompressed;
     case NID_p256_sphincsharaka128frobust:
     case NID_rsa3072_sphincsharaka128frobust:
       return NID_sphincsharaka128frobust;
@@ -664,8 +737,31 @@ static int get_oqs_security_bits(int openssl_nid)
     case NID_p256_rainbowIclassic:
     case NID_rsa3072_rainbowIclassic:
       return 128;
+    case NID_rainbowIcircumzenithal:
+    case NID_p256_rainbowIcircumzenithal:
+    case NID_rsa3072_rainbowIcircumzenithal:
+      return 128;
+    case NID_rainbowIcompressed:
+    case NID_p256_rainbowIcompressed:
+    case NID_rsa3072_rainbowIcompressed:
+      return 128;
+    case NID_rainbowIIIclassic:
+    case NID_p384_rainbowIIIclassic:
+      return 192;
+    case NID_rainbowIIIcircumzenithal:
+    case NID_p384_rainbowIIIcircumzenithal:
+      return 192;
+    case NID_rainbowIIIcompressed:
+    case NID_p384_rainbowIIIcompressed:
+      return 192;
     case NID_rainbowVclassic:
     case NID_p521_rainbowVclassic:
+      return 256;
+    case NID_rainbowVcircumzenithal:
+    case NID_p521_rainbowVcircumzenithal:
+      return 256;
+    case NID_rainbowVcompressed:
+    case NID_p521_rainbowVcompressed:
       return 256;
     case NID_sphincsharaka128frobust:
     case NID_p256_sphincsharaka128frobust:
@@ -1282,8 +1378,24 @@ static int oqs_item_verify(EVP_MD_CTX *ctx, const ASN1_ITEM *it, void *asn,
         nid != NID_rainbowIclassic &&
         nid != NID_p256_rainbowIclassic &&
         nid != NID_rsa3072_rainbowIclassic &&
+        nid != NID_rainbowIcircumzenithal &&
+        nid != NID_p256_rainbowIcircumzenithal &&
+        nid != NID_rsa3072_rainbowIcircumzenithal &&
+        nid != NID_rainbowIcompressed &&
+        nid != NID_p256_rainbowIcompressed &&
+        nid != NID_rsa3072_rainbowIcompressed &&
+        nid != NID_rainbowIIIclassic &&
+        nid != NID_p384_rainbowIIIclassic &&
+        nid != NID_rainbowIIIcircumzenithal &&
+        nid != NID_p384_rainbowIIIcircumzenithal &&
+        nid != NID_rainbowIIIcompressed &&
+        nid != NID_p384_rainbowIIIcompressed &&
         nid != NID_rainbowVclassic &&
         nid != NID_p521_rainbowVclassic &&
+        nid != NID_rainbowVcircumzenithal &&
+        nid != NID_p521_rainbowVcircumzenithal &&
+        nid != NID_rainbowVcompressed &&
+        nid != NID_p521_rainbowVcompressed &&
         nid != NID_sphincsharaka128frobust &&
         nid != NID_p256_sphincsharaka128frobust &&
         nid != NID_rsa3072_sphincsharaka128frobust &&
@@ -1827,8 +1939,24 @@ DEFINE_OQS_EVP_METHODS(rsa3072_picnic3l1, NID_rsa3072_picnic3l1, "rsa3072_picnic
 DEFINE_OQS_EVP_METHODS(rainbowIclassic, NID_rainbowIclassic, "rainbowIclassic", "OpenSSL Rainbow-I-Classic algorithm")
 DEFINE_OQS_EVP_METHODS(p256_rainbowIclassic, NID_p256_rainbowIclassic, "p256_rainbowIclassic", "OpenSSL ECDSA p256 Rainbow-I-Classic algorithm")
 DEFINE_OQS_EVP_METHODS(rsa3072_rainbowIclassic, NID_rsa3072_rainbowIclassic, "rsa3072_rainbowIclassic", "OpenSSL RSA3072 Rainbow-I-Classic algorithm")
+DEFINE_OQS_EVP_METHODS(rainbowIcircumzenithal, NID_rainbowIcircumzenithal, "rainbowIcircumzenithal", "OpenSSL Rainbow-I-Circumzenithal algorithm")
+DEFINE_OQS_EVP_METHODS(p256_rainbowIcircumzenithal, NID_p256_rainbowIcircumzenithal, "p256_rainbowIcircumzenithal", "OpenSSL ECDSA p256 Rainbow-I-Circumzenithal algorithm")
+DEFINE_OQS_EVP_METHODS(rsa3072_rainbowIcircumzenithal, NID_rsa3072_rainbowIcircumzenithal, "rsa3072_rainbowIcircumzenithal", "OpenSSL RSA3072 Rainbow-I-Circumzenithal algorithm")
+DEFINE_OQS_EVP_METHODS(rainbowIcompressed, NID_rainbowIcompressed, "rainbowIcompressed", "OpenSSL Rainbow-I-Compressed algorithm")
+DEFINE_OQS_EVP_METHODS(p256_rainbowIcompressed, NID_p256_rainbowIcompressed, "p256_rainbowIcompressed", "OpenSSL ECDSA p256 Rainbow-I-Compressed algorithm")
+DEFINE_OQS_EVP_METHODS(rsa3072_rainbowIcompressed, NID_rsa3072_rainbowIcompressed, "rsa3072_rainbowIcompressed", "OpenSSL RSA3072 Rainbow-I-Compressed algorithm")
+DEFINE_OQS_EVP_METHODS(rainbowIIIclassic, NID_rainbowIIIclassic, "rainbowIIIclassic", "OpenSSL Rainbow-III-Classic algorithm")
+DEFINE_OQS_EVP_METHODS(p384_rainbowIIIclassic, NID_p384_rainbowIIIclassic, "p384_rainbowIIIclassic", "OpenSSL ECDSA p256 Rainbow-III-Classic algorithm")
+DEFINE_OQS_EVP_METHODS(rainbowIIIcircumzenithal, NID_rainbowIIIcircumzenithal, "rainbowIIIcircumzenithal", "OpenSSL Rainbow-III-Circumzenithal algorithm")
+DEFINE_OQS_EVP_METHODS(p384_rainbowIIIcircumzenithal, NID_p384_rainbowIIIcircumzenithal, "p384_rainbowIIIcircumzenithal", "OpenSSL ECDSA p384 Rainbow-III-Circumzenithal algorithm")
+DEFINE_OQS_EVP_METHODS(rainbowIIIcompressed, NID_rainbowIIIcompressed, "rainbowIIIcompressed", "OpenSSL Rainbow-III-Compressed algorithm")
+DEFINE_OQS_EVP_METHODS(p384_rainbowIIIcompressed, NID_p384_rainbowIIIcompressed, "p384_rainbowIIIcompressed", "OpenSSL ECDSA p384 Rainbow-III-Compressed algorithm")
 DEFINE_OQS_EVP_METHODS(rainbowVclassic, NID_rainbowVclassic, "rainbowVclassic", "OpenSSL Rainbow-V-Classic algorithm")
 DEFINE_OQS_EVP_METHODS(p521_rainbowVclassic, NID_p521_rainbowVclassic, "p521_rainbowVclassic", "OpenSSL ECDSA p521 Rainbow-V-Classic algorithm")
+DEFINE_OQS_EVP_METHODS(rainbowVcircumzenithal, NID_rainbowVcircumzenithal, "rainbowVcircumzenithal", "OpenSSL Rainbow-V-Circumzenithal algorithm")
+DEFINE_OQS_EVP_METHODS(p521_rainbowVcircumzenithal, NID_p521_rainbowVcircumzenithal, "p521_rainbowVcircumzenithal", "OpenSSL ECDSA p521 Rainbow-V-Circumzenithal algorithm")
+DEFINE_OQS_EVP_METHODS(rainbowVcompressed, NID_rainbowVcompressed, "rainbowVcompressed", "OpenSSL Rainbow-V-Compressed algorithm")
+DEFINE_OQS_EVP_METHODS(p521_rainbowVcompressed, NID_p521_rainbowVcompressed, "p521_rainbowVcompressed", "OpenSSL ECDSA p521 Rainbow-V-Compressed algorithm")
 DEFINE_OQS_EVP_METHODS(sphincsharaka128frobust, NID_sphincsharaka128frobust, "sphincsharaka128frobust", "OpenSSL SPHINCS+-Haraka-128f-robust algorithm")
 DEFINE_OQS_EVP_METHODS(p256_sphincsharaka128frobust, NID_p256_sphincsharaka128frobust, "p256_sphincsharaka128frobust", "OpenSSL ECDSA p256 SPHINCS+-Haraka-128f-robust algorithm")
 DEFINE_OQS_EVP_METHODS(rsa3072_sphincsharaka128frobust, NID_rsa3072_sphincsharaka128frobust, "rsa3072_sphincsharaka128frobust", "OpenSSL RSA3072 SPHINCS+-Haraka-128f-robust algorithm")

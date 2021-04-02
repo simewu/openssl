@@ -1,0 +1,3 @@
+Timestamp,Timestamp (Seconds),Algorithm,Algorithm (human readable),Avg Key Gen Time (ms),Avg Cert Signing Request Time (ms),Avg Cert Gen Time (ms),Avg Cert Verifying Time (ms),
+2021-03-13 21:31:59.941848,1615671119.941848,rainbowVclassic,Rainbow V Classic,4201.500478029251,71.79637670516968,135.66599559783936,121.80816316604614,
+2021-03-14 00:11:03.083138,1615680663.083138,p521_rainbowVcompressed,P521 + Rainbow V Compressed,4813.732538461685,2287.4872794151306,2342.260395050049,92.04306101799011,

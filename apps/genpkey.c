@@ -306,6 +306,7 @@ int init_gen_str(EVP_PKEY_CTX **pctx,
 
 static int genpkey_cb(EVP_PKEY_CTX *ctx)
 {
+    return 1; //cyber sec lab
     char c = '*';
     BIO *b = EVP_PKEY_CTX_get_app_data(ctx);
     int p;

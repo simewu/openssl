@@ -308,10 +308,42 @@ static const char *get_sigtype(int nid)
         return "ECDSA p256 - Rainbow-I-Classic";
     case NID_rsa3072_rainbowIclassic:
         return "RSA3072 - Rainbow-I-Classic";
+    case NID_rainbowIcircumzenithal:
+        return "Rainbow-I-Circumzenithal";
+    case NID_p256_rainbowIcircumzenithal:
+        return "ECDSA p256 - Rainbow-I-Circumzenithal";
+    case NID_rsa3072_rainbowIcircumzenithal:
+        return "RSA3072 - Rainbow-I-Circumzenithal";
+    case NID_rainbowIcompressed:
+        return "Rainbow-I-Compressed";
+    case NID_p256_rainbowIcompressed:
+        return "ECDSA p256 - Rainbow-I-Compressed";
+    case NID_rsa3072_rainbowIcompressed:
+        return "RSA3072 - Rainbow-I-Compressed";
+    case NID_rainbowIIIclassic:
+        return "Rainbow-III-Classic";
+    case NID_p384_rainbowIIIclassic:
+        return "ECDSA p256 - Rainbow-III-Classic";
+    case NID_rainbowIIIcircumzenithal:
+        return "Rainbow-III-Circumzenithal";
+    case NID_p384_rainbowIIIcircumzenithal:
+        return "ECDSA p384 - Rainbow-III-Circumzenithal";
+    case NID_rainbowIIIcompressed:
+        return "Rainbow-III-Compressed";
+    case NID_p384_rainbowIIIcompressed:
+        return "ECDSA p384 - Rainbow-III-Compressed";
     case NID_rainbowVclassic:
         return "Rainbow-V-Classic";
     case NID_p521_rainbowVclassic:
         return "ECDSA p521 - Rainbow-V-Classic";
+    case NID_rainbowVcircumzenithal:
+        return "Rainbow-V-Circumzenithal";
+    case NID_p521_rainbowVcircumzenithal:
+        return "ECDSA p521 - Rainbow-V-Circumzenithal";
+    case NID_rainbowVcompressed:
+        return "Rainbow-V-Compressed";
+    case NID_p521_rainbowVcompressed:
+        return "ECDSA p521 - Rainbow-V-Compressed";
     case NID_sphincsharaka128frobust:
         return "SPHINCS+-Haraka-128f-robust";
     case NID_p256_sphincsharaka128frobust:

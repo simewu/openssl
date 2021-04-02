@@ -95,8 +95,24 @@
 # define EVP_PKEY_RAINBOWICLASSIC NID_rainbowIclassic
 # define EVP_PKEY_P256_RAINBOWICLASSIC NID_p256_rainbowIclassic
 # define EVP_PKEY_RSA3072_RAINBOWICLASSIC NID_rsa3072_rainbowIclassic
+# define EVP_PKEY_RAINBOWICIRCUMZENITHAL NID_rainbowIcircumzenithal
+# define EVP_PKEY_P256_RAINBOWICIRCUMZENITHAL NID_p256_rainbowIcircumzenithal
+# define EVP_PKEY_RSA3072_RAINBOWICIRCUMZENITHAL NID_rsa3072_rainbowIcircumzenithal
+# define EVP_PKEY_RAINBOWICOMPRESSED NID_rainbowIcompressed
+# define EVP_PKEY_P256_RAINBOWICOMPRESSED NID_p256_rainbowIcompressed
+# define EVP_PKEY_RSA3072_RAINBOWICOMPRESSED NID_rsa3072_rainbowIcompressed
+# define EVP_PKEY_RAINBOWIIICLASSIC NID_rainbowIIIclassic
+# define EVP_PKEY_P384_RAINBOWIIICLASSIC NID_p384_rainbowIIIclassic
+# define EVP_PKEY_RAINBOWIIICIRCUMZENITHAL NID_rainbowIIIcircumzenithal
+# define EVP_PKEY_P384_RAINBOWIIICIRCUMZENITHAL NID_p384_rainbowIIIcircumzenithal
+# define EVP_PKEY_RAINBOWIIICOMPRESSED NID_rainbowIIIcompressed
+# define EVP_PKEY_P384_RAINBOWIIICOMPRESSED NID_p384_rainbowIIIcompressed
 # define EVP_PKEY_RAINBOWVCLASSIC NID_rainbowVclassic
 # define EVP_PKEY_P521_RAINBOWVCLASSIC NID_p521_rainbowVclassic
+# define EVP_PKEY_RAINBOWVCIRCUMZENITHAL NID_rainbowVcircumzenithal
+# define EVP_PKEY_P521_RAINBOWVCIRCUMZENITHAL NID_p521_rainbowVcircumzenithal
+# define EVP_PKEY_RAINBOWVCOMPRESSED NID_rainbowVcompressed
+# define EVP_PKEY_P521_RAINBOWVCOMPRESSED NID_p521_rainbowVcompressed
 # define EVP_PKEY_SPHINCSHARAKA128FROBUST NID_sphincsharaka128frobust
 # define EVP_PKEY_P256_SPHINCSHARAKA128FROBUST NID_p256_sphincsharaka128frobust
 # define EVP_PKEY_RSA3072_SPHINCSHARAKA128FROBUST NID_rsa3072_sphincsharaka128frobust
@@ -106,7 +122,7 @@
 # define EVP_PKEY_SPHINCSSHAKE256128FROBUST NID_sphincsshake256128frobust
 # define EVP_PKEY_P256_SPHINCSSHAKE256128FROBUST NID_p256_sphincsshake256128frobust
 # define EVP_PKEY_RSA3072_SPHINCSSHAKE256128FROBUST NID_rsa3072_sphincsshake256128frobust
-#define OQS_OPENSSL_SIG_algs_length 42
+#define OQS_OPENSSL_SIG_algs_length 58
 #define OQS_OPENSSL_KEM_algs_length 40
 #define IS_OQS_OPENSSL_KEM_NID(a) ((a >= NID_oqs_kem_default) && (a <= NID_p384_sntrup857))
 #define IS_OQS_OPENSSL_SIG_NID(a) ((a >= NID_oqs_sig_default) && (a <= NID_rsa3072_sphincsshake256128frobust))
